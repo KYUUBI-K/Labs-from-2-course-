@@ -1,0 +1,44 @@
+<template>
+  <div class="task">
+    <div>{{ task.id }}</div>
+    <div>Назва препарату: {{ task.title }}</div>
+    <div>Ціна: {{ task.price }}$</div>
+    <div>Діюча речовина: {{ task.active_substance }}</div>
+    <button @click="deletetask">
+  </div>
+</template>
+
+<script>
+import { mapActions } from "vuex";
+export default {
+  name: "Taskitem",
+  props: {
+    task: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
+  methods: {
+    ...mapActions(["delete"]),
+    deletetask() {
+      this.delete(
+        this.person.name,
+        this.person.addres,
+        this.person.course,
+        this.person.group,
+        this.person.averageMark
+      );
+      this.$router.push({ path: "/" });
+    },
+  },
+};
+</script>
+
+<style lang="css" scoped>
+.task {
+  width: 300px;
+  border: 2px solid red;
+  border-radius: 8px;
+  margin: 10px;
+}
+</style>

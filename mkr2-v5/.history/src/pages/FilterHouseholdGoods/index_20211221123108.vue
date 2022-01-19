@@ -1,0 +1,94 @@
+<template>
+    <div>
+        <h2>Фільтрувати побутові прилади</h2>
+        <div class="filterhouseholdGoods">
+            <label>
+                <input type="text" v-model="name" placeholder="Назва">
+            </label>
+            <br>
+            <br>
+            <button @click="filterName">Фільтрувати за Назвою</button>
+            <br>
+            <br>
+            <label>
+                <input type="text" v-model="category" placeholder="Категорія">
+            </label>
+            <br>
+            <br>
+            <button @click="filterCategory">Фільтрувати за Категорією</button>
+            <br>
+            <br>
+            <label> 
+                <input type="text" v-model="producer" placeholder="Виробник">
+            </label>
+            <br>
+            <br>
+            <button @click="filterProducer">Фільтрувати за Виробником</button>
+            <br>
+            <br>
+            <label>
+                <input type="text" v-model.number="price" placeholder="Ціна">
+            </label>
+            <br>
+            <br>
+            <button @click="filterPrice">Фільтрувати за Ціною</button>
+            <br>
+            <br>
+        </div>
+    </div>
+</template>
+
+<script>
+import { mapActions } from "vuex";
+    export default {
+        name: 'FilterHouseholdGoods',
+        data() {
+            return {
+                name: null,
+                category: null,
+                producer: null,
+                price: null
+            }
+        },
+        methods: {
+            ...mapActions(['filterNameAction']),
+            filterName() {
+                this.filterNameAction(
+                    this.name,
+                )
+                this.$router.push({ path: '/' })
+            },
+            ...mapActions(['filterCategoryAction']),
+            filterCategory() {
+                this.filterCategoryAction(
+                    this.category,
+                )
+                this.$router.push({ path: '/' })
+            },
+            ...mapActions(['filterProducerAction']),
+            filterProducer() {
+                this.filterProducerAction(
+                    this.producer,
+                )
+                this.$router.push({ path: '/' })
+            },
+            ...mapActions(['filterPriceAction']),
+            filterPrice() {
+                this.filterPriceAction(
+                    this.price,
+                )
+                this.$router.push({ path: '/' })
+            }
+        },
+    }
+</script>
+
+<style lang="css" scoped>
+button,label {
+    font-family: sans-serif;
+    background: black;
+    color: yellow;
+    padding: 10px;
+    border: 2px solid black;
+}
+</style>

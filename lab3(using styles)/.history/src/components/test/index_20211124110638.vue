@@ -1,0 +1,54 @@
+<template>
+    <div>
+        <table class = "name">
+            <tr>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopp6JCcuE6uYPBuxXve96mpE-S-KhB08FGA&usqp=CAU" alt="">
+               <th>Ім'я клієнта</th>
+               <input type="checkbox">
+            </tr>
+            <tr>
+                <img src="data:image/png;base64,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" alt="">
+                <th>Телефон</th>
+               <input type="checkbox">
+            </tr>
+            <tr>
+                <img src="data:image/png;base64,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" alt="">
+                <th>e-mail</th>
+               <input type="checkbox">
+            </tr>
+            <tr>
+                <th>Коментарі</th>
+               <input type="checkbox">
+            </tr>
+            <tr>
+                <th>Через кого прийшов клієнт</th>
+               <input type="checkbox">
+            </tr>
+            <tr>
+                <th>Скидка %</th>
+               <input type="checkbox">
+            </tr>
+            <tr>
+                <th>Баланс</th>
+               <input type="checkbox">
+            </tr>
+            <tr>
+                <th>Групи</th>
+               <input type="checkbox">
+            </tr>
+            <tr>
+                <th>Вітання</th>
+               <input type="checkbox">
+            </tr>
+        </table>
+    </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style lang="scss" scoped>
+</style>
